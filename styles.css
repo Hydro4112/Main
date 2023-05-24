@@ -1,0 +1,85 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+}
+
+.game-container {
+  position: relative;
+  width: 800px;
+  height: 200px;
+  border: 1px solid #000;
+}
+
+.sky {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70%;
+  background-color: #7ec0ee;
+}
+
+.ground {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 30%;
+  background-color: #228b22;
+}
+
+.dino {
+  position: absolute;
+  bottom: 30%;
+  left: 5%;
+  width: 25px;
+  height: 50px;
+  background-color: #ff0;
+}
+
+.obstacle {
+  position: absolute;
+  bottom: 30%;
+  right: 0;
+  width: 25px;
+  height: 50px;
+  background-color: #f00;
+  animation: moveObstacle 2s linear infinite;
+}
+
+@keyframes moveObstacle {
+  0% {
+    right: -25px;
+  }
+  100% {
+    right: 100%;
+  }
+}
+
+.scoreboard {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 5px;
+}
+
+.score,
+.highscore {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+}
